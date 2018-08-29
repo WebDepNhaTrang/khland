@@ -701,11 +701,11 @@ img {
 .form-control {
   background-color: transparent;
   width: 100%;
-  height: 38px;
+  height: 50px;
   border-radius: 0;
   font-size: 14px;
   color: #000000;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   font-weight: 500;
   padding: 0 15px;
   border: 1px solid #e1dddd; }

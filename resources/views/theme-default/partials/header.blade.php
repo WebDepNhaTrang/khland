@@ -10,14 +10,14 @@
     <div class="top-header-area">
         <div class="h-100 d-md-flex justify-content-between align-items-center">
             <div class="email-address">
-                <a href="mailto:contact@southtemplate.com">contact@southtemplate.com</a>
+                <a href="mailto:{{ setting('lien-he.email') }}">{{ setting('lien-he.email') }}</a>
             </div>
             <div class="phone-number d-flex">
                 <div class="icon">
                     <img src="{{ asset('assets/img/icons/phone-call.png') }}" alt="">
                 </div>
                 <div class="number">
-                    <a href="tel:+45 677 8993000 223">+45 677 8993000 223</a>
+                    <a href="tel:{{ setting('lien-he.phone') }}">{{ setting('lien-he.phone') }}</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <nav class="classy-navbar justify-content-between" id="southNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="{{ asset('assets/img/core-img/logo.png') }}" alt=""></a>
+                <a class="nav-brand" href="index.html"><img src="{{ Voyager::image(setting('site.logo')) }}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -47,7 +47,7 @@
 
                     <!-- Nav Start -->
                     <div class="classynav">
-                        <ul>
+                        <!-- <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -72,44 +72,9 @@
                             <li><a href="about-us.html">About Us</a></li>
                             <li><a href="listings.html">Properties</a></li>
                             <li><a href="blog.html">Blog</a></li>
-                            <li><a href="#">Mega Menu</a>
-                                <div class="megamenu">
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Headline 1</li>
-                                        <li><a href="#">Mega Menu Item 1</a></li>
-                                        <li><a href="#">Mega Menu Item 2</a></li>
-                                        <li><a href="#">Mega Menu Item 3</a></li>
-                                        <li><a href="#">Mega Menu Item 4</a></li>
-                                        <li><a href="#">Mega Menu Item 5</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Headline 2</li>
-                                        <li><a href="#">Mega Menu Item 1</a></li>
-                                        <li><a href="#">Mega Menu Item 2</a></li>
-                                        <li><a href="#">Mega Menu Item 3</a></li>
-                                        <li><a href="#">Mega Menu Item 4</a></li>
-                                        <li><a href="#">Mega Menu Item 5</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Headline 3</li>
-                                        <li><a href="#">Mega Menu Item 1</a></li>
-                                        <li><a href="#">Mega Menu Item 2</a></li>
-                                        <li><a href="#">Mega Menu Item 3</a></li>
-                                        <li><a href="#">Mega Menu Item 4</a></li>
-                                        <li><a href="#">Mega Menu Item 5</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Headline 4</li>
-                                        <li><a href="#">Mega Menu Item 1</a></li>
-                                        <li><a href="#">Mega Menu Item 2</a></li>
-                                        <li><a href="#">Mega Menu Item 3</a></li>
-                                        <li><a href="#">Mega Menu Item 4</a></li>
-                                        <li><a href="#">Mega Menu Item 5</a></li>
-                                    </ul>
-                                </div>
-                            </li>
                             <li><a href="contact.html">Contact</a></li>
-                        </ul>
+                        </ul> -->
+                        {{ menu('frontend', 'theme-default.partials.main-menu') }}
 
                         <!-- Search Form -->
                         <div class="south-search-form">
@@ -129,8 +94,3 @@
     </div>
 </header>
 <!-- ##### Header Area End ##### -->
-
-<!-- <div class="menu">
-    <p>Menu:</p>
-    {{ menu('frontend', 'theme-default.partials.main-menu') }}
-</div> -->

@@ -102,8 +102,8 @@
 
     <!-- Copywrite Text -->
     <div class="copywrite-text d-flex align-items-center justify-content-center">
-        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <p>&copy;<script>document.write(new Date().getFullYear());</script> Thiết kế và Phát triển <i class="fa fa-heart-o" aria-hidden="true"></i> bởi <a href="http://webdepnhatrang.com" target="_blank" class="designBy" title="thiết kế web tại Nha Trang, thiết kế web Khánh Hòa, web đẹp nha trang">KaTiSoft - Web Đẹp Nha Trang</a>
+        
+        </p>
     </div>
 </footer>
