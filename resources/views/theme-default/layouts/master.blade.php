@@ -11,8 +11,8 @@
         <meta name="robots" content="index, follow">
         <meta name="revisit-after" content="3 days">
         <meta name="geo.region" content="VN-34" />
-        <meta name="geo.position" content="12.218285;109.188664" />
-        <meta name="ICBM" content="12.218285, 109.188664" />
+        <meta name="geo.position" content="" />
+        <meta name="ICBM" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- FB Open Graph Tags -->
