@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th8 31, 2018 lúc 12:42 AM
+-- Thời gian đã tạo: Th8 31, 2018 lúc 01:31 AM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 7.1.20
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `db_khland`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `banners`
+--
+
+CREATE TABLE `banners` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `banners`
+--
+
+INSERT INTO `banners` (`id`, `title`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'FIND YOUR HOME', 'banners\\August2018\\hOdP2NlmIBa5EImB7ArY.jpg', '2018-08-31 01:20:48', '2018-08-31 01:20:48'),
+(2, 'FIND YOUR DREAM HOUSE', 'banners\\August2018\\w08P4jLAwiuvyTbvyXpk.jpg', '2018-08-31 01:21:14', '2018-08-31 01:21:14'),
+(3, 'FIND YOUR PERFECT HOUSE', 'banners\\August2018\\XLD7q4KKJUxBWlKwmlmi.jpg', '2018-08-31 01:21:32', '2018-08-31 01:21:32');
 
 -- --------------------------------------------------------
 
@@ -128,7 +151,12 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (53, 6, 'status', 'select_dropdown', 'Status', 1, 1, 1, 1, 1, 1, '{\"default\":\"INACTIVE\",\"options\":{\"INACTIVE\":\"INACTIVE\",\"ACTIVE\":\"ACTIVE\"}}', 9),
 (54, 6, 'created_at', 'timestamp', 'Created At', 1, 1, 1, 0, 0, 0, '', 10),
 (55, 6, 'updated_at', 'timestamp', 'Updated At', 1, 0, 0, 0, 0, 0, '', 11),
-(56, 6, 'image', 'image', 'Page Image', 0, 1, 1, 1, 1, 1, '', 12);
+(56, 6, 'image', 'image', 'Page Image', 0, 1, 1, 1, 1, 1, '', 12),
+(57, 7, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(58, 7, 'title', 'text', 'Tiêu đề', 0, 1, 1, 1, 1, 1, NULL, 2),
+(59, 7, 'image', 'image', 'Hình ảnh (1920x800 px)', 0, 1, 1, 1, 1, 1, NULL, 3),
+(60, 7, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 4),
+(61, 7, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5);
 
 -- --------------------------------------------------------
 
@@ -164,7 +192,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, '', '', 1, 0, NULL, '2018-08-28 18:35:09', '2018-08-28 18:35:09'),
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2018-08-28 18:35:18', '2018-08-28 18:35:18'),
 (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2018-08-28 18:35:20', '2018-08-28 18:35:20'),
-(6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2018-08-28 18:35:23', '2018-08-28 18:35:23');
+(6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2018-08-28 18:35:23', '2018-08-28 18:35:23'),
+(7, 'banners', 'banners', 'Banner', 'Banners', 'voyager-images', 'App\\Banner', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-31 01:18:53', '2018-08-31 01:18:53');
 
 -- --------------------------------------------------------
 
@@ -223,10 +252,10 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2018-08-28 18:35:10', '2018-08-28 18:43:46', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2018-08-28 18:35:10', '2018-08-28 18:43:46', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2018-08-28 18:35:10', '2018-08-28 18:43:46', 'voyager.bread.index', NULL),
-(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, 15, 1, '2018-08-28 18:35:10', '2018-08-28 18:44:21', 'voyager.settings.index', NULL),
-(11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, 15, 3, '2018-08-28 18:35:19', '2018-08-28 18:44:21', 'voyager.categories.index', NULL),
-(12, 1, 'Posts', '', '_self', 'voyager-news', NULL, 15, 2, '2018-08-28 18:35:22', '2018-08-28 18:44:21', 'voyager.posts.index', NULL),
-(13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, 15, 4, '2018-08-28 18:35:24', '2018-08-28 18:44:21', 'voyager.pages.index', NULL),
+(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, 15, 5, '2018-08-28 18:35:10', '2018-08-31 01:19:35', 'voyager.settings.index', NULL),
+(11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, 15, 3, '2018-08-28 18:35:19', '2018-08-31 01:19:34', 'voyager.categories.index', NULL),
+(12, 1, 'Posts', '', '_self', 'voyager-news', NULL, 15, 2, '2018-08-28 18:35:22', '2018-08-31 01:19:34', 'voyager.posts.index', NULL),
+(13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, 15, 4, '2018-08-28 18:35:24', '2018-08-31 01:19:35', 'voyager.pages.index', NULL),
 (14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2018-08-28 18:35:29', '2018-08-28 18:43:46', 'voyager.hooks', NULL),
 (15, 1, 'Frontend Custom', '#', '_self', 'voyager-brush', '#000000', NULL, 2, '2018-08-28 18:43:34', '2018-08-28 18:45:09', NULL, ''),
 (16, 2, 'Trang Chủ', '', '_self', NULL, '#000000', NULL, 1, '2018-08-29 07:55:18', '2018-08-29 07:56:41', 'frontend.pages.home', NULL),
@@ -236,7 +265,8 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (20, 2, 'Cho Thuê BĐS', '#', '_self', NULL, '#000000', NULL, 4, '2018-08-29 07:56:38', '2018-08-29 07:57:06', NULL, ''),
 (21, 2, 'Thiết Kế Nội Thất', '#', '_self', NULL, '#000000', NULL, 5, '2018-08-29 07:56:59', '2018-08-29 07:57:06', NULL, ''),
 (22, 2, 'Thiết Kế Nội Thất', '#', '_self', NULL, '#000000', 21, 1, '2018-08-29 07:57:29', '2018-08-29 07:57:32', NULL, ''),
-(23, 2, 'Thi Công Nội Thất', '#', '_self', NULL, '#000000', 21, 2, '2018-08-29 07:57:44', '2018-08-29 07:57:48', NULL, '');
+(23, 2, 'Thi Công Nội Thất', '#', '_self', NULL, '#000000', 21, 2, '2018-08-29 07:57:44', '2018-08-29 07:57:48', NULL, ''),
+(24, 1, 'Banners', '', '_self', 'voyager-images', NULL, 15, 1, '2018-08-31 01:18:53', '2018-08-31 01:19:27', 'voyager.banners.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -381,7 +411,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (38, 'edit_pages', 'pages', '2018-08-28 18:35:25', '2018-08-28 18:35:25'),
 (39, 'add_pages', 'pages', '2018-08-28 18:35:25', '2018-08-28 18:35:25'),
 (40, 'delete_pages', 'pages', '2018-08-28 18:35:25', '2018-08-28 18:35:25'),
-(41, 'browse_hooks', NULL, '2018-08-28 18:35:29', '2018-08-28 18:35:29');
+(41, 'browse_hooks', NULL, '2018-08-28 18:35:29', '2018-08-28 18:35:29'),
+(42, 'browse_banners', 'banners', '2018-08-31 01:18:53', '2018-08-31 01:18:53'),
+(43, 'read_banners', 'banners', '2018-08-31 01:18:53', '2018-08-31 01:18:53'),
+(44, 'edit_banners', 'banners', '2018-08-31 01:18:53', '2018-08-31 01:18:53'),
+(45, 'add_banners', 'banners', '2018-08-31 01:18:53', '2018-08-31 01:18:53'),
+(46, 'delete_banners', 'banners', '2018-08-31 01:18:53', '2018-08-31 01:18:53');
 
 -- --------------------------------------------------------
 
@@ -438,7 +473,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (37, 1),
 (38, 1),
 (39, 1),
-(40, 1);
+(40, 1),
+(42, 1),
+(43, 1),
+(44, 1),
+(45, 1),
+(46, 1);
 
 -- --------------------------------------------------------
 
@@ -530,7 +570,16 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin'),
 (11, 'lien-he.email', 'Email', 'khland@gmail.com.com', NULL, 'text', 6, 'Liên Hệ'),
 (12, 'lien-he.phone', 'Điện thoại', '0909.999.999', NULL, 'text', 7, 'Liên Hệ'),
-(13, 'gioi-thieu.title', 'Tiêu Đề Trang', 'Giới Thiệu', NULL, 'text', 8, 'Giới Thiệu');
+(13, 'gioi-thieu.title', 'Tiêu Đề', 'KHLAND.VN', NULL, 'text', 9, 'Giới Thiệu'),
+(14, 'gioi-thieu.banner', 'Banner (1920x800 px)', 'settings\\August2018\\lQPCdgPbFk5H7MshkIYq.jpg', NULL, 'image', 8, 'Giới Thiệu'),
+(15, 'gioi-thieu.description', 'Mô Tả', '<p>Suspendisse dictum enim sit amet libero</p>', NULL, 'rich_text_box', 10, 'Giới Thiệu'),
+(16, 'gioi-thieu.image', 'Hình Ảnh (1000x385 px)', 'settings\\August2018\\lzHVb69MWKF2CDLz6kL7.jpg', NULL, 'image', 11, 'Giới Thiệu'),
+(17, 'gioi-thieu.body', 'Nội Dung', '<p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada. Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu varius ac. Etiam cursus turpis lectus, id iaculis risus tempor id. Phasellus fringilla nisl sed sem scelerisque, eget aliquam magna vehicula.</p>', NULL, 'rich_text_box', 12, 'Giới Thiệu'),
+(18, 'gioi-thieu.qc_st_bg', 'Phần Quảng Cáo - Hình Nền (1920x1280 px)', 'settings\\August2018\\L24JOjLanT9QPC9jJ9Zt.jpg', NULL, 'image', 13, 'Giới Thiệu'),
+(19, 'gioi-thieu.qc_st_title', 'Phần Quảng Cáo - Tiêu Đề', 'BẠN ĐANG TÌM MỘT NƠI ĐỂ THUÊ?', NULL, 'text', 14, 'Giới Thiệu'),
+(20, 'gioi-thieu.qc_st_des', 'Phần Quảng Cáo - Mô Tả', 'Suspendisse dictum enim sit amet libero malesuada feugiat.', NULL, 'text', 15, 'Giới Thiệu'),
+(21, 'gioi-thieu.qc_st_text_btn', 'Phần Quảng Cáo - Tên Nút', 'Tìm Ngay', NULL, 'text', 16, 'Giới Thiệu'),
+(22, 'gioi-thieu.qc_st_link_btn', 'Phần Quảng Cáo - Liên Kết Nút', '#', NULL, 'text', 17, 'Giới Thiệu');
 
 -- --------------------------------------------------------
 
@@ -625,6 +674,12 @@ CREATE TABLE `user_roles` (
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `banners`
+--
+ALTER TABLE `banners`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `categories`
@@ -746,6 +801,12 @@ ALTER TABLE `user_roles`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `banners`
+--
+ALTER TABLE `banners`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -755,13 +816,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT cho bảng `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `menus`
@@ -773,7 +834,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT cho bảng `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -791,7 +852,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT cho bảng `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT cho bảng `posts`
@@ -809,7 +870,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT cho bảng `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `translations`

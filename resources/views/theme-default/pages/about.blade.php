@@ -11,7 +11,7 @@
 
 @section('content')
 <!-- ##### Breadcumb Area Start ##### -->
-<section class="breadcumb-area bg-img" style="background-image: url({{ asset('assets/img/bg-img/hero1.jpg') }});">
+<section class="breadcumb-area bg-img" style="background-image: url({{ Voyager::image(setting('gioi-thieu.banner')) }});">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -35,11 +35,14 @@
             <div class="col-12 col-lg-8">
                 <div class="section-heading text-left wow fadeInUp" data-wow-delay="250ms">
                     <h2>{{ setting('gioi-thieu.title') }}</h2>
-                    <p>Suspendisse dictum enim sit amet libero</p>
+                    {!! setting('gioi-thieu.description') !!}
                 </div>
                 <div class="about-content">
-                    <img class="wow fadeInUp" data-wow-delay="350ms" src="{{ asset('assets/img/bg-img/about.jpg') }}" alt="">
-                    <p class="wow fadeInUp" data-wow-delay="450ms">Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada. Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu varius ac. Etiam cursus turpis lectus, id iaculis risus tempor id. Phasellus fringilla nisl sed sem scelerisque, eget aliquam magna vehicula.</p>
+                    <img class="wow fadeInUp" data-wow-delay="350ms" src="{{ Voyager::image(setting('gioi-thieu.image')) }}" alt="">
+                    <div class="wow fadeInUp" data-wow-delay="450ms">
+
+                    </div>
+                    {!! setting('gioi-thieu.body') !!}
                 </div>
             </div>
 
@@ -210,14 +213,14 @@
 <!-- ##### About Content Wrapper End ##### -->
 
 <!-- ##### Call To Action Area Start ##### -->
-<section class="call-to-action-area bg-fixed bg-overlay-black" style="background-image: url({{ asset('assets/img/bg-img/cta.jpg') }})">
+<section class="call-to-action-area bg-fixed bg-overlay-black" style="background-image: url({{ Voyager::image(setting('gioi-thieu.qc_st_bg')) }})">
     <div class="container h-100">
         <div class="row align-items-center h-100">
             <div class="col-12">
                 <div class="cta-content text-center">
-                    <h2 class="wow fadeInUp" data-wow-delay="300ms">Are you looking for a place to rent?</h2>
-                    <h6 class="wow fadeInUp" data-wow-delay="400ms">Suspendisse dictum enim sit amet libero malesuada feugiat.</h6>
-                    <a href="#" class="btn south-btn mt-50 wow fadeInUp" data-wow-delay="500ms">Search</a>
+                    <h2 class="wow fadeInUp" data-wow-delay="300ms">{{ setting('gioi-thieu.qc_st_title') }}</h2>
+                    <h6 class="wow fadeInUp" data-wow-delay="400ms">{{ setting('gioi-thieu.qc_st_des') }}</h6>
+                    <a href="{{ setting('gioi-thieu.qc_st_link_btn') }}" class="btn south-btn mt-50 wow fadeInUp" data-wow-delay="500ms">{{ setting('gioi-thieu.qc_st_text_btn') }}</a>
                 </div>
             </div>
         </div>

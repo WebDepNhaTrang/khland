@@ -11,46 +11,29 @@
 
 @section('content')
 <!-- ##### Hero Area Start ##### -->
+@php
+    $banners = getAllBanners('*', 'created_at', 'desc');
+@endphp
+@if( $banners->count() > 0 )
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
+        @foreach($banners as $v)
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url({{ asset('assets/img/bg-img/hero1.jpg') }});">
+        <div class="single-hero-slide bg-img" style="background-image: url({{ Voyager::image($v->image) }});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <div class="hero-slides-content">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">Find your home</h2>
+                            <h2 data-animation="fadeInUp" data-delay="100ms">{{ $v->title }}</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url({{ asset('assets/img/bg-img/hero2.jpg') }});">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <div class="hero-slides-content">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">Find your dream house</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url({{ asset('assets/img/bg-img/hero3.jpg') }});">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <div class="hero-slides-content">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">Find your perfect house</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </section>
+@endif
 <!-- ##### Hero Area End ##### -->
 
 <!-- ##### Advance Search Area Start ##### -->
@@ -316,14 +299,14 @@
 <!-- ##### Featured Properties Area End ##### -->
 
 <!-- ##### Call To Action Area Start ##### -->
-<section class="call-to-action-area bg-fixed bg-overlay-black" style="background-image: url({{ asset('assets/img/bg-img/cta.jpg') }});">
+<section class="call-to-action-area bg-fixed bg-overlay-black" style="background-image: url({{ Voyager::image(setting('gioi-thieu.qc_st_bg')) }})">
     <div class="container h-100">
         <div class="row align-items-center h-100">
             <div class="col-12">
                 <div class="cta-content text-center">
-                    <h2 class="wow fadeInUp" data-wow-delay="300ms">Are you looking for a place to rent?</h2>
-                    <h6 class="wow fadeInUp" data-wow-delay="400ms">Suspendisse dictum enim sit amet libero malesuada feugiat.</h6>
-                    <a href="#" class="btn south-btn mt-50 wow fadeInUp" data-wow-delay="500ms">Search</a>
+                    <h2 class="wow fadeInUp" data-wow-delay="300ms">{{ setting('gioi-thieu.qc_st_title') }}</h2>
+                    <h6 class="wow fadeInUp" data-wow-delay="400ms">{{ setting('gioi-thieu.qc_st_des') }}</h6>
+                    <a href="{{ setting('gioi-thieu.qc_st_link_btn') }}" class="btn south-btn mt-50 wow fadeInUp" data-wow-delay="500ms">{{ setting('gioi-thieu.qc_st_text_btn') }}</a>
                 </div>
             </div>
         </div>
