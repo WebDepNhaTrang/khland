@@ -8,11 +8,11 @@
                         <p>Tìm kiếm</p>
                     </div>
                     <!-- Search Form -->
-                    <form action="#" method="post" id="advanceSearch">
+                    <form action="{{ route('frontend.pages.search') }}" method="get" id="advanceSearch">
                         <div class="row">
                             <div class="col-md-9 col-lg-9">
                                 <div class="form-group">
-                                    <input type="input" class="form-control" name="input" placeholder="Nhập nội dung bạn muốn tìm...">
+                                    <input type="input" class="form-control" name="search" placeholder="Nhập nội dung bạn muốn tìm...">
                                 </div>
                             </div>
                             <div class="col-md-3 col-lg-3">

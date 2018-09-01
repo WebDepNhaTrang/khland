@@ -65,3 +65,9 @@ Route::get('/thi-cong-noi-that.html', [
     'uses'  => 'FrontendController@thiCongNoiThat',
     'as'    => 'frontend.pages.thiCongNoiThat'
 ]);
+
+//Xử Lý Tìm Kiếm
+Route::get('/tim-kiem.html', [
+    'uses' => 'FrontendController@getSearch',
+    'as'   => 'frontend.pages.search'
+]);
