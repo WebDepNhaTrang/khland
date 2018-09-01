@@ -79,7 +79,7 @@
                         <!-- Search Form -->
                         <div class="south-search-form">
                             <form action="#" method="post">
-                                <input type="search" name="search" id="search" placeholder="Search Anything ...">
+                                <input type="search" name="search" id="search" placeholder="Nhập nội dung bạn muốn tìm...">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>

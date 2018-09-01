@@ -1064,7 +1064,7 @@ img {
         color: #7d7d7d; }
 
 .footer-widget-area .widget-title {
-  margin-bottom: 90px; }
+  margin-bottom: 15px; }
   .footer-widget-area .widget-title h6 {
     font-size: 16px;
     color: #ffffff;
@@ -1089,7 +1089,7 @@ img {
   .footer-widget-area .weekly-office-hours ul li:first-of-type {
     padding-top: 0; }
 .footer-widget-area .address {
-  margin-top: 40px; }
+  margin-top: 0px; }
   .footer-widget-area .address h6 {
     position: relative;
     z-index: 1;
@@ -1651,7 +1651,7 @@ img {
 
 /* :: 21.0 Contact Area CSS */
 .contact-heading {
-  margin-bottom: 90px; }
+  margin-bottom: 20px; }
   .contact-heading h6 {
     border-bottom: 2px solid #947054;
     display: inline-block;
@@ -1669,7 +1669,7 @@ img {
   .content-sidebar .weekly-office-hours ul li:first-of-type {
     padding-top: 0; }
 .content-sidebar .address {
-  margin-top: 40px; }
+  margin-top: 0px; }
   .content-sidebar .address h6 {
     position: relative;
     z-index: 1;
