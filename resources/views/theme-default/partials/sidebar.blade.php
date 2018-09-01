@@ -1,7 +1,7 @@
 <div class="blog-sidebar-area">
     <!-- Search Widget -->
     <div class="search-widget-area mb-50">
-        <form action="#" method="get">
+        <form action="{{ route('frontend.pages.search') }}" method="get">
             <input type="search" name="search" id="search" placeholder="Search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
