@@ -74,20 +74,20 @@
                             <h6><img src="{{ asset('assets/img/icons/envelope.png') }}" alt=""> {{ setting('lien-he.email') }}</h6>
                         </div>
                         <div class="realtor--contact-form">
-                            <form action="#" method="post">
+                            <form action="{{ route('store.thienpham.contact') }}" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="realtor-name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="realtor-name" name="name" placeholder="Họ tên" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="realtor-number" placeholder="Your Number">
+                                    <input type="number" class="form-control" id="realtor-number" name="phone" placeholder="Điện thoại">
                                 </div>
                                 <div class="form-group">
-                                    <input type="enumber" class="form-control" id="realtor-email" placeholder="Your Mail">
+                                    <input type="enumber" class="form-control" id="realtor-email" name="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" id="realtor-message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                    <textarea name="message" class="form-control" id="realtor-message" cols="30" rows="10" placeholder="Nội dung" name="message"></textarea>
                                 </div>
-                                <button type="submit" class="btn south-btn">Send Message</button>
+                                <button type="submit" class="btn south-btn">Gửi</button>
                             </form>
                         </div>
                     </div>
