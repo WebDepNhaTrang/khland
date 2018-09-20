@@ -62,13 +62,13 @@
                             <input type="text" class="form-control" name="name" id="contact-name" placeholder="Họ tên" required>
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" name="phone" id="contact-number" placeholder="Điện thoại">
+                            <input type="number" class="form-control" name="phone" id="contact-number" placeholder="Điện thoại" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="contact-email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" id="contact-email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Nội dung"></textarea>
+                            <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Nội dung" required></textarea>
                         </div>
                         <button type="submit" class="btn south-btn">Gửi</button>
                     </form>

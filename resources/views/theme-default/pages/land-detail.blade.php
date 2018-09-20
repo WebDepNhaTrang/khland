@@ -79,13 +79,13 @@
                                     <input type="text" class="form-control" id="realtor-name" name="name" placeholder="Họ tên" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="realtor-number" name="phone" placeholder="Điện thoại">
+                                    <input type="number" class="form-control" id="realtor-number" name="phone" placeholder="Điện thoại" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="enumber" class="form-control" id="realtor-email" name="email" placeholder="Email">
+                                    <input type="enumber" class="form-control" id="realtor-email" name="email" placeholder="Email" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" id="realtor-message" cols="30" rows="10" placeholder="Nội dung" name="message"></textarea>
+                                    <textarea name="message" class="form-control" id="realtor-message" cols="30" rows="10" placeholder="Nội dung" name="message" required></textarea>
                                 </div>
                                 <button type="submit" class="btn south-btn">Gửi</button>
                             </form>
