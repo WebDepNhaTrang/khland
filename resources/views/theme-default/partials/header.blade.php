@@ -30,7 +30,7 @@
             <nav class="classy-navbar justify-content-between" id="southNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="{{ Voyager::image(setting('site.logo')) }}" alt=""></a>
+                <a class="nav-brand" href="{{ route('frontend.pages.home') }}"><img src="{{ Voyager::image(setting('site.logo')) }}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -47,39 +47,11 @@
 
                     <!-- Nav Start -->
                     <div class="classynav">
-                        <!-- <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="#">Listings</a>
-                                        <ul class="dropdown">
-                                            <li><a href="listings.html">Listings</a></li>
-                                            <li><a href="single-listings.html">Single Listings</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Blog</a>
-                                        <ul class="dropdown">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="single-blog.html">Single Blog</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="elements.html">Elements</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="listings.html">Properties</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul> -->
                         {{ menu('frontend', 'theme-default.partials.main-menu') }}
-
                         <!-- Search Form -->
                         <div class="south-search-form">
-                            <form action="#" method="post">
-                                <input type="search" name="search" id="search" placeholder="Search Anything ...">
+                            <form action="{{ route('frontend.pages.search') }}" method="get">
+                                <input type="search" name="search" id="search" placeholder="Nhập nội dung bạn muốn tìm...">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>

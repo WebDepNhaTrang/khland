@@ -24,7 +24,7 @@
         <meta property="og:image"         content="@yield('fb_img')" />
    
 
-        <link rel="shortcut icon" type="image/png" href="">
+        <link rel="shortcut icon" type="image/png" href="{{ Voyager::image(setting('site.logo')) }}">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- all css here -->
